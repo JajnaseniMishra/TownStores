@@ -1,4 +1,5 @@
 body {
+    
     margin: 0;
     font-family: 'Poppins', sans-serif;
 }
@@ -21,15 +22,48 @@ body {
 }
 
 /* HERO */
+/* HERO SECTION */
 .hero {
+    position: relative;
     height: 90vh;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/shop1.jpg');
-    background-size: cover;
+    background: url('bodyimg.png') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+}
+
+/* BLUR + DARK OVERLAY */
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    
+    backdrop-filter: blur(2px);   /* BLUR EFFECT */
+    background: rgba(0, 0, 0, 0.4); /* DARK SHADE */
+
+    top: 0;
+    left: 0;
+}
+
+/* TEXT CONTENT */
+.hero-content {
+    position: relative;
     color: white;
     text-align: center;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 40px;
+}
+
+.hero-content button {
+    padding: 10px 20px;
+    background: #22c55e;
+    border: none;
+    color: white;
+    cursor: pointer;
 }
 
 .hero button {
@@ -47,21 +81,57 @@ section {
 }
 
 /* SERVICES */
+/* CARD CONTAINER */
 .card-container {
     display: flex;
-    justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
+/* INDIVIDUAL CARD */
 .card {
-    padding: 20px;
-    background: #f1f5f9;
-    border-radius: 10px;
-    width: 150px;
-    transition: 0.3s;
+    position: relative;
+    width: 250px;
+    height: 180px;
+    border-radius: 15px;
+    overflow: hidden;
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    font-weight: bold;
+    text-align: center;
+
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
+/* HOVER EFFECT */
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* DARK OVERLAY */
+.card-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+}
+
+/* TEXT ABOVE OVERLAY */
+.card h3 {
+    position: relative;
+    z-index: 2;
+}
 .card:hover {
     transform: translateY(-5px);
 }
@@ -74,7 +144,7 @@ section {
 }
 
 .gallery img {
-    width: 30%;
+    width: 25%;
     
     border-radius: 20px;
 }
